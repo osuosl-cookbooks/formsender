@@ -6,3 +6,5 @@ description      'Installs/Configures formsender'
 long_description 'Installs/Configures formsender'
 version          '0.1.0'
 
+name             'git'
+version          '0.1.0'
