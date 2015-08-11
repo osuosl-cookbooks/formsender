@@ -6,7 +6,7 @@ default['formsender']['databag'] = 'pgsql'
 default['postgis']['template_name'] = nil
 
 default['formsender']['debug'] = false
-default['formsender']['git_branch'] = '29737d8e4a835f570b70d51a22f9bc885369be1c'
+default['formsender']['git_branch'] = '24c7f374689319c4bc073ad8f76a3aec1cce8a18'
 default['formsender']['repository'] = 'https://github.com/osuosl/formsender'
 
 default['formsender']['server_name'] = node['fqdn']
