@@ -18,6 +18,7 @@
 
 
 include_recipe 'git'
+include_recipe 'python'
 
 python_webapp 'formsender' do
   create_user true
@@ -30,20 +31,11 @@ python_webapp 'formsender' do
   config_template 'config.yml.erb'
   config_destination "#{node['formsender']['config_dir']}/config.yml"
   config_vars(
-    host: pg['host'],
-    port: pg['port'],
-    username: pg['user'],
-    password: pg['pass'],
-    db_name: pg['database_name'],
-    secret_key: pg['secret_key'],
-
     debug: node['formsender']['debug'],
     application_dir: node['formsender']['application_dir']
   )
 
-  django_migrate true
-  django_collectstatic true
-  interpreter 'python2.7'
+  interpreter 'python'
 
   gunicorn_port node['formsender']['gunicorn_port']
 end

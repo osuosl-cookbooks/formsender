@@ -6,15 +6,11 @@ default['formsender']['databag'] = 'pgsql'
 default['postgis']['template_name'] = nil
 
 default['formsender']['debug'] = false
-default['formsender']['git_branch'] = '229e64125442fc981a3b98d3e99fe077f913da01'
+default['formsender']['git_branch'] = '29737d8e4a835f570b70d51a22f9bc885369be1c'
 default['formsender']['repository'] = 'https://github.com/osuosl/formsender'
 
 default['formsender']['server_name'] = node['fqdn']
 default['formsender']['gunicorn_port'] = 8080
-default['formsender']['access_log'] = "#{node['nginx']['log_dir']}" \
-  '/formsender/access.log'
-default['formsender']['error_log'] = "#{node['nginx']['log_dir']}" \
-  '/formsender/error.log'
 default['formsender']['subdirectory'] = '' # add trailing slash if in a subdir
 
 override['python']['pip_location'] = "#{node['python']['prefix_dir']}" \
