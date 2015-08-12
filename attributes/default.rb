@@ -6,7 +6,7 @@ default['formsender']['databag'] = 'pgsql'
 default['postgis']['template_name'] = nil
 
 default['formsender']['debug'] = false
-default['formsender']['git_branch'] = '24c7f374689319c4bc073ad8f76a3aec1cce8a18'
+default['formsender']['git_branch'] = '0e39f8cfb494c2105b30eda65c5c47a71f05c9a1'
 default['formsender']['repository'] = 'https://github.com/osuosl/formsender'
 
 default['formsender']['server_name'] = node['fqdn']
@@ -18,16 +18,6 @@ override['python']['pip_location'] = "#{node['python']['prefix_dir']}" \
 
 if platform_family?('rhel')
   override['nginx']['default_site_enabled'] = false
-  override['postgresql']['enable_pgdg_yum'] = true
-  override['postgresql']['version'] = '9.3'
-  override['postgresql']['server']['packages'] = %W(
-    postgresql#{node['postgresql']['version'].gsub('.', '')}-server)
-  override['postgresql']['client']['packages'] = %W(
-    postgresql#{node['postgresql']['version'].gsub('.', '')}-devel
-    libpqxx-devel)
-  override['postgresql']['server']['service_name'] = 'postgresql-9.3'
 end
-
-default['postgis']['package'] = 'postgis2_93'
 
 override['build-essential']['compile_time'] = true

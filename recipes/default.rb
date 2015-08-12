@@ -35,7 +35,5 @@ python_webapp 'formsender' do
     application_dir: node['formsender']['application_dir']
   )
 
-  interpreter 'python'
-
   gunicorn_port node['formsender']['gunicorn_port']
 end
