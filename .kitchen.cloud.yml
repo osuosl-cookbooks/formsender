@@ -23,7 +23,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[formsender::default]
-      - recipe[formsender::python]
       - recipe[formsender::build_essential]
+      - recipe[formsender::python]
+      - recipe[formsender::default]
       - recipe[formsender::nginx]
