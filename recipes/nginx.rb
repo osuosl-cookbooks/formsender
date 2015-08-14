@@ -20,11 +20,15 @@
 include_recipe 'osl-nginx'
 
 nginx_app 'formsender' do
-  template 'formsender.conf.erb'
+  template 'conf.erb'
   cookbook 'formsender'
 end
 
 selinux_policy_boolean 'httpd_can_network_connect' do
   value true
   notifies :start, 'service[nginx]', :immediate
+end
+
+if platform_family?('rhel')
+  node.override['nginx']['default_site_enabled'] = false
 end

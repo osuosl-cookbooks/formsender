@@ -18,7 +18,6 @@
 
 
 include_recipe 'git'
-include_recipe 'python'
 
 python_webapp 'formsender' do
   create_user true

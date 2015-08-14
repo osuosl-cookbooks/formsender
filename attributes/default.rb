@@ -11,12 +11,3 @@ default['formsender']['repository'] = 'https://github.com/osuosl/formsender'
 default['formsender']['server_name'] = node['fqdn']
 default['formsender']['gunicorn_port'] = 8080
 default['formsender']['subdirectory'] = '' # add trailing slash if in a subdir
-
-override['python']['pip_location'] = "#{node['python']['prefix_dir']}" \
-  '/bin/pip2.7'
-
-if platform_family?('rhel')
-  override['nginx']['default_site_enabled'] = false
-end
-
-override['build-essential']['compile_time'] = true
