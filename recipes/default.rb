@@ -27,7 +27,7 @@ python_webapp 'formsender' do
   repository node['formsender']['repository']
   revision node['formsender']['git_branch']
 
-  config_template 'config.yml.erb'
+  config_template 'conf.erb'
   config_destination "#{node['formsender']['config_dir']}/config.yml"
   config_vars(
     debug: node['formsender']['debug'],
