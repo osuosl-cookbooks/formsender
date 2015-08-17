@@ -26,12 +26,8 @@ python_webapp 'formsender' do
   repository node['formsender']['repository']
   revision node['formsender']['git_branch']
 
-  config_template 'conf.py'
+  config_template 'conf.py.erb'
   config_destination "#{node['formsender']['application_dir']}/source/conf.py"
-  config_vars(
-    debug: node['formsender']['debug'],
-    application_dir: node['formsender']['application_dir']
-  )
 
   gunicorn_port node['formsender']['gunicorn_port']
 end
