@@ -24,6 +24,5 @@ suites:
   - name: default
     run_list:
       - recipe[formsender::build_essential]
-      - recipe[formsender::python]
       - recipe[formsender::default]
       - recipe[formsender::nginx]

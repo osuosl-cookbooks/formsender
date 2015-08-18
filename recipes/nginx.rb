@@ -20,7 +20,7 @@
 include_recipe 'osl-nginx'
 
 nginx_app 'formsender' do
-  template 'conf.erb'
+  template 'nginx.erb'
   cookbook 'formsender'
 end
 
