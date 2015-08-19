@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: formsender
-# Recipe:: default
+# Recipe:: nginx
 #
-# Copyright 2015 Oregon State University
+# Copyright 2015, Oregon State University
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,19 +15,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-include_recipe 'git'
+include_recipe 'osl-nginx'
 
-python_webapp 'formsender' do
-  create_user true
-  owner node['formsender']['venv_owner']
-  group node['formsender']['venv_group']
+nginx_app 'formsender' do
+  template 'nginx.erb'
+  cookbook 'formsender'
+end
 
-  repository node['formsender']['repository']
-  revision node['formsender']['git_branch']
+selinux_policy_boolean 'httpd_can_network_connect' do
+  value true
+  notifies :start, 'service[nginx]', :immediate
+end
 
-  config_template 'conf.py.erb'
-  config_destination "#{node['formsender']['application_dir']}/source/conf.py"
-
-  gunicorn_port node['formsender']['gunicorn_port']
+if platform_family?('rhel')
+  node.override['nginx']['default_site_enabled'] = false
 end

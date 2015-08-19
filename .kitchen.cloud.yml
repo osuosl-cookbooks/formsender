@@ -19,13 +19,10 @@ platforms:
   driver_config:
     username: centos
     image_ref: "CentOS 6.6"
-- name: centos-7.1
-  driver_plugin: openstack
-  driver_config:
-    username: centos
-    image_ref: "CentOS 7.1"
 
 suites:
   - name: default
     run_list:
+      - recipe[formsender::build_essential]
       - recipe[formsender::default]
+      - recipe[formsender::nginx]

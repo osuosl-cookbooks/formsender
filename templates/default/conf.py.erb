@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+EMAIL = "<%= node['formsender']['conf_email'] %>"
+TOKN = "<%= node['formsender']['conf_token'] %>"
+CEILING = <%= node['formsender']['conf_ceiling'] %>
+DUPLICATE_CHECK_TIME = <%= node['formsender']['conf_duplication_time'] %>
+HOST = "<%= node['formsender']['conf_host'] %>"
+PORT = <%= node['formsender']['conf_port'] %>
+SMTP_HOST = "<%= node['formsender']['conf_smtp_host'] %>"
+FROM = "<%= node['formsender']['conf_from'] %>"

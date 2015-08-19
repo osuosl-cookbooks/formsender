@@ -1,0 +1,11 @@
+
+server {
+  listen 80 default_server;
+  access_log <%= node['formsender']['access_log'] %>;
+  error_log <%= node['formsender']['error_log'] %>;
+  server_name <%= node['formsender']['server_name'] %>;
+
+  location / {
+    proxy_pass http://localhost:<%= node['formsender']['gunicorn_port'] %>;
+  }
+}
