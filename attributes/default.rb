@@ -20,3 +20,6 @@ default['formsender']['conf_host'] = '0.0.0.0'
 default['formsender']['conf_port'] = 5000
 default['formsender']['conf_smtp_host'] = 'smtp.osuosl.org'
 default['formsender']['conf_from'] = 'formsender@osuosl.org'
+
+default['formsender']['error_log'] = '/var/log/nginx/formsender/error.log'
+default['formsender']['access_log'] = '/var/log/nginx/formsender/access.log'
