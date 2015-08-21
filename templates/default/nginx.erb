@@ -4,8 +4,18 @@ server {
   access_log <%= node['formsender']['access_log'] %>;
   error_log <%= node['formsender']['error_log'] %>;
   server_name <%= node['formsender']['server_name'] %>;
+  error_page  405     =200 $uri;
 
+  location /post/ {
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Headers' 'Origin, X-Requested-With, Content-Type, Accept';
+    root <%= node['formsender']['application_dir'] %>;
+    proxy_pass http://localhost:<%= node['formsender']['gunicorn_port'] %>;
+  }
   location / {
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Headers' 'Origin, X-Requested-With, Content-Type, Accept';
+    root <%= node['formsender']['application_dir'] %>;
     proxy_pass http://localhost:<%= node['formsender']['gunicorn_port'] %>;
   }
 }
