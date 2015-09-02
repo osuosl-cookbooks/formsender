@@ -4,7 +4,7 @@ default['formsender']['venv_owner'] = 'root'
 default['formsender']['venv_group'] = 'root'
 
 default['formsender']['debug'] = false
-default['formsender']['git_branch'] = 'develop'
+default['formsender']['git_branch'] = 'master'
 default['formsender']['repository'] = 'https://github.com/osuosl/formsender'
 
 default['formsender']['server_name'] = node['fqdn']
