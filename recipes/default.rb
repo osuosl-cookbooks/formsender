@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include_recipe 'formsender::_centos' if platform_family?('rhel')
 include_recipe 'git'
 
 python_webapp 'formsender' do
@@ -28,6 +29,8 @@ python_webapp 'formsender' do
 
   config_template 'conf.py.erb'
   config_destination "#{node['formsender']['application_dir']}/source/conf.py"
+
+  interpreter 'python2.7'
 
   gunicorn_port node['formsender']['gunicorn_port']
 end
