@@ -24,5 +24,3 @@ default['formsender']['conf_log_addr'] = '/dev/log'
 
 default['formsender']['error_log'] = '/var/log/nginx/formsender/error.log'
 default['formsender']['access_log'] = '/var/log/nginx/formsender/access.log'
-
-override['python']['pip_location'] = "#{node['python']['prefix_dir']}/bin/pip2.7"

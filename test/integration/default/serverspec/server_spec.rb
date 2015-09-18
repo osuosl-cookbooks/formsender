@@ -12,10 +12,10 @@ describe port(80) do
 end
 
 describe service('formsender') do
-  it { should be_running }
+  it { should be_running.under('supervisor') }
 end
 
-describe service('gunicorn') do
+describe service('supervisor') do
   it { should be_running }
 end
 
