@@ -3,6 +3,11 @@ formsender CHANGELOG
 This file is used to list changes made in each version of the
 formsender cookbook.
 
+0.1.4
+-----
+- Update cookbook to Centos 7.1
+- Remove unnecessary Python 2.7 install
+
 0.1.3
 -----
 - Added default LOG_ADDR attribute for logging
