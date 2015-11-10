@@ -11,9 +11,9 @@ default['formsender']['server_name'] = node['fqdn']
 default['formsender']['gunicorn_port'] = 8080
 default['formsender']['subdirectory'] = '' # add trailing slash if in a subdir
 
-default['formsender']['conf_email'] = 'support@osuosl.org'
-default['formsender']['conf_email_sup'] = 'support@osuosl.org'
-default['formsender']['conf_email_root'] = 'root@osuosl.org'
+default['formsender']['emails']['default'] = 'support@osuosl.org'
+default['formsender']['emails']['support'] = 'support@osuosl.org'
+default['formsender']['emails']['root'] = 'root@osuosl.org'
 default['formsender']['conf_token'] = \
 '15674hsda//*q23%^13jnxccv3ds54sa4g4sa532323!OoRdsfISDIdks38*(dsfjk)aS'
 default['formsender']['conf_ceiling'] = 10

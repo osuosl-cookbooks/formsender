@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-EMAIL = {'default': "<%= node['formsender']['conf_email'] %>",
-         'support': "<%= node['formsender']['conf_email_sup'] %>",
-         'root': "<%= node['formsender']['conf_email_root'] %>"}
+EMAIL = <%= '{' + node['formsender']['emails'].map {|k,v| "'#{k}': '#{v}'"}.join(',') + '}' %>
 TOKN = "<%= node['formsender']['conf_token'] %>"
 CEILING = <%= node['formsender']['conf_ceiling'] %>
 DUPLICATE_CHECK_TIME = <%= node['formsender']['conf_duplication_time'] %>
