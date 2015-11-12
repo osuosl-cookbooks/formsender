@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 EMAIL = <%= '{' + node['formsender']['emails'].map {|k,v| "'#{k}': '#{v}'"}.join(',') + '}' %>
-TOKN = "<%= node['formsender']['conf_token'] %>"
+TOKEN = "<%= node['formsender']['conf_token'] %>"
 CEILING = <%= node['formsender']['conf_ceiling'] %>
 DUPLICATE_CHECK_TIME = <%= node['formsender']['conf_duplication_time'] %>
 HOST = "<%= node['formsender']['conf_host'] %>"
