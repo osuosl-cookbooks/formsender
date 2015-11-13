@@ -24,6 +24,9 @@ describe service('nginx') do
 end
 
 describe file('/opt/formsender/source/conf.py') do
+  default = "'default': 'support@osuosl.org'"
+  support = "'support': 'support@osuosl.org'"
+  root    = "'root': 'root@osuosl.org'"
   it { should exist }
-  its(:content) { should match /EMAIL = {'default': 'support@osuosl.org','support': 'support@osuosl.org','root': 'root@osuosl.org'}/ }
+  its(:content) { should match(/EMAIL = {#{default},#{support},#{root}}/) }
 end
