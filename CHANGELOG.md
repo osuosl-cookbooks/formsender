@@ -3,6 +3,10 @@ formsender CHANGELOG
 This file is used to list changes made in each version of the
 formsender cookbook.
 
+0.1.5
+-----
+- Add configuration options for multiple emails
+
 0.1.4
 -----
 - Update cookbook to Centos 7.1
