@@ -22,3 +22,11 @@ end
 describe service('nginx') do
   it { should be_running }
 end
+
+describe file('/opt/formsender/source/conf.py') do
+  it { should exist }
+  it do
+    should contain("EMAIL = {'default': 'support@osuosl.org','support': \
+'support@osuosl.org','root': 'root@osuosl.org'}")
+  end
+end
