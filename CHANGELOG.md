@@ -3,6 +3,10 @@ formsender CHANGELOG
 This file is used to list changes made in each version of the
 formsender cookbook.
 
+0.1.6
+-----
+- Depend on selinux_policy for production
+
 0.1.5
 -----
 - Add configuration options for multiple emails
