@@ -12,3 +12,5 @@ depends 'osl-nginx'
 depends 'python-webapp'
 depends 'selinux_policy'
 depends 'yum-ius'
+
+supports 'centos', '~> 7.0'
